@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="https://unpkg.com/98.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Convertisseur de nombres entre binaire, décimal, hexadécimal et octal.">
+  <title>Convertisseur de bases numériques</title>
+  <link rel="stylesheet" href="asset/styles.css">
+  <script src="asset/converter-new.js" defer></script>
+</head>
+<body>
+  <div class="window">
+    <div class="title-bar">
+      <h1 class="title-bar-text">Convertisseur de bases numeriques</h1>
+    </div>
+
+    <div class="window-body">
+    <header>
+      <p>Convertissez un nombre entre les systèmes binaire, décimal, hexadécimal et octal.</p>
+    </header>
+
+  <main>
+    <section aria-labelledby="converter-title">
+      <h2 id="converter-title">Convertir un nombre</h2>
+
+      <form id="converter-form">
+        <div>
+          <label for="number-input">Nombre à convertir</label>
+          <input
+            type="text"
+            id="number-input"
+            name="number"
+            placeholder="Ex. : 1010"
+            autocomplete="off"
+            required
+          >
+        </div>
+
+        <div class="field-row">
+            <fieldset>
+          <legend>Base de départ</legend>
+            <input id="radio5" type="radio" name="source" value="2" checked>
+            <label for="radio5">Binaire (base 2)</label>
+            <input id="radio6" type="radio" name="source" value="10">
+            <label for="radio6">Décimal (base 10)</label>
+            <input id="radio7" type="radio" name="source" value="16">
+            <label for="radio7">Hexadécimal (base 16)</label>
+            <input id="radio8" type="radio" name="source" value="8">
+            <label for="radio8">Octal (base 8)</label>
+            </fieldset>
+        </div>
+
+        <div class="field-row">
+            <fieldset>
+          <legend>Base de resultat</legend>
+            <input id="radio5" type="radio" name="source" value="2" checked>
+            <label for="radio5">Binaire (base 2)</label>
+            <input id="radio6" type="radio" name="source" value="10">
+            <label for="radio6">Décimal (base 10)</label>
+            <input id="radio7" type="radio" name="source" value="16">
+            <label for="radio7">Hexadécimal (base 16)</label>
+            <input id="radio8" type="radio" name="source" value="8">
+            <label for="radio8">Octal (base 8)</label>
+            </fieldset>
+        </div>
+
+        <div>
+          <button type="submit">Convertir</button>
+          <button type="reset">Effacer</button>
+        </div>
+      </form>
+
+      <section aria-labelledby="result-title" aria-live="polite">
+        <h2 id="result-title">Résultat</h2>
+        <output id="conversion-result" for="number-input">Le résultat s’affichera ici.</output>
+        <p id="conversion-error" role="alert"></p>
+      </section>
+    </section>
+  </main>
+
+  <footer>
+    <p>Convertisseur de bases numériques</p>
+  </footer>
+    </div>
+  </div>
+</body>
+</html>
