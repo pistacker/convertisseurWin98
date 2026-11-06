@@ -2,10 +2,8 @@
 
 const form = document.querySelector("#converter-form");
 const numberInput = document.querySelector("#number-input");
-const targetBaseSelect = document.querySelector("#target-base");
 const resultOutput = document.querySelector("#conversion-result");
 const errorOutput = document.querySelector("#conversion-error");
-const resetButton = form.querySelector('button[type="reset"]');
 
 const supportedBases = [2, 8, 10, 16];
 const easterEggUrl = "https://www.youtube.com/watch?v=xvFZjo5PgG0";
@@ -56,19 +54,24 @@ function convertNumber(event) {
 
   try {
     const selectedSource = form.querySelector('input[name="source"]:checked');
+    const selectedTarget = form.querySelector('input[name="target"]:checked');
 
     if (!selectedSource) {
       throw new Error("Choisissez une base de départ.");
     }
 
+    if (!selectedTarget) {
+      throw new Error("Choisissez une base d’arrivée.");
+    }
+
     const sourceBase = Number(selectedSource.value);
-    const targetBase = Number(targetBaseSelect.value);
+    const targetBase = Number(selectedTarget.value);
+    const number = parseInteger(numberInput.value, sourceBase);
 
     if (!supportedBases.includes(targetBase)) {
       throw new Error("Choisissez une base d’arrivée valide.");
     }
 
-    const number = parseInteger(numberInput.value, sourceBase);
     resultOutput.textContent = number.toString(targetBase).toUpperCase();
   } catch (error) {
     resultOutput.textContent = "";
@@ -84,10 +87,6 @@ function resetFormFeedback() {
 }
 
 function countResetClicks() {
-  if (resetClickCount >= easterEggClickLimit) {
-    return;
-  }
-
   resetClickCount += 1;
 
   if (resetClickCount === easterEggClickLimit) {
@@ -102,10 +101,8 @@ form.addEventListener("change", () => {
   clearFeedback();
   resetEasterEggClickCount();
 });
-
 numberInput.addEventListener("input", () => {
   clearFeedback();
   resetEasterEggClickCount();
 });
-
-resetButton.addEventListener("click", countResetClicks);
+form.querySelector('button[type="reset"]').addEventListener("click", countResetClicks);

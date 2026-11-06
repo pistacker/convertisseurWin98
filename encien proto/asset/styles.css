@@ -1,0 +1,199 @@
+body {
+  background-color: #c0c0c0;
+  margin: 0px;
+  padding: 2px;
+  min-height: 100vh;
+}
+
+.window {
+  max-width: cover;
+  width: cover;
+  margin: 0 auto;
+}
+
+.title-bar-text {
+  margin: 0;
+  font-size: 20px;
+  position: relative;
+}
+
+.title-bar {
+  position: relative;
+}
+
+.logoX {
+  position: absolute;
+  right: 2px;
+  width: 18px;
+  height: 16px;
+  padding: 0;
+  margin: 0;
+  background-color: #ff0000;
+  color: #ffffff;
+  border: 2px solid;
+  border-color: #dfdfdf #404040 #404040 #dfdfdf;
+  box-shadow: inset -1px -1px #808080;
+  font:
+    bold 14px Tahoma,
+    Arial,
+    sans-serif;
+  line-height: 12px;
+  text-align: center;
+  cursor: pointer;
+  box-sizing: border-box;
+}
+
+menu[role="tablist"] {
+  display: flex;
+  list-style-type: none;
+  margin: 0 0 -2px;
+  padding-left: 3px;
+  position: relative;
+  text-indent: 0;
+}
+
+menu[role="tablist"] > li {
+  border-top-left-radius: 3px;
+  border-top-right-radius: 3px;
+  box-shadow:
+    inset -1px 0 #0a0a0a,
+    inset 1px 1px #dfdfdf,
+    inset -2px 0 grey,
+    inset 2px 2px #fff;
+  z-index: 1;
+}
+
+menu[role="tablist"] > li[aria-selected="true"] {
+  background-color: silver;
+  margin-left: -3px;
+  margin-top: -2px;
+  padding-bottom: 2px;
+  position: relative;
+  z-index: 8;
+}
+
+menu[role="tablist"] > li > a {
+  color: #222;
+  display: block;
+  margin: 6px;
+  text-decoration: none;
+}
+
+menu[role="tablist"] > li[aria-selected="true"] > a:focus {
+  outline: none;
+}
+
+menu[role="tablist"] > li > a:focus {
+  outline: 1px dotted #222;
+}
+
+menu[role="tablist"].multirows > li {
+  flex-grow: 1;
+  text-align: center;
+}
+
+.sunken-panel {
+  border: 2px groove transparent;
+  border-image: url("data:image/svg+xml;charset=utf-8,%3Csvg width='5' height='5' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill='gray' d='M0 0h4v1H0z'/%3E%3Cpath fill='gray' d='M0 0h1v4H0z'/%3E%3Cpath fill='%230a0a0a' d='M1 1h2v1H1z'/%3E%3Cpath fill='%230a0a0a' d='M1 1h1v2H1z'/%3E%3Cpath fill='%23fff' d='M0 4h5v1H0z'/%3E%3Cpath fill='%23fff' d='M4 0h1v5H4z'/%3E%3Cpath fill='%23dfdfdf' d='M3 1h1v3H3z'/%3E%3Cpath fill='%23dfdfdf' d='M1 3h3v1H1z'/%3E%3C/svg%3E")
+    2;
+  box-sizing: border-box;
+  overflow: auto;
+}
+
+.sunken-panel,
+table {
+  background-color: #fff;
+}
+
+table {
+  border-collapse: collapse;
+  position: relative;
+  text-align: left;
+  white-space: nowrap;
+}
+
+table > thead > tr > * {
+  background: silver;
+  box-shadow:
+    inset -1px -1px #0a0a0a,
+    inset 1px 1px #fff,
+    inset -2px -2px grey,
+    inset 2px 2px #dfdfdf;
+  box-sizing: border-box;
+  font-weight: 400;
+  height: 17px;
+  padding: 0 6px;
+  position: sticky;
+  top: 0;
+}
+
+table.interactive > tbody > tr {
+  cursor: pointer;
+}
+
+table > tbody > tr.highlighted {
+  background-color: navy;
+  color: #fff;
+}
+
+table > tbody > tr > * {
+  height: 14px;
+  padding: 0 6px;
+}
+
+.progress-indicator {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border: none;
+  border-radius: 0;
+  box-shadow:
+    inset -2px -2px #dfdfdf,
+    inset 2px 2px grey;
+  box-sizing: border-box;
+  height: 32px;
+  padding: 4px;
+  position: relative;
+}
+
+.progress-indicator > .progress-indicator-bar {
+  background-color: navy;
+  display: block;
+  height: 100%;
+}
+
+.progress-indicator.segmented > .progress-indicator-bar {
+  background-color: transparent;
+  background-image: linear-gradient(90deg, navy 16px, transparent 0 2px);
+  background-repeat: repeat;
+  background-size: 18px 100%;
+  width: 100%;
+}
+
+.field-border {
+  background: #fff;
+}
+
+.field-border,
+.field-border-disabled {
+  box-shadow:
+    inset -1px -1px #fff,
+    inset 1px 1px grey,
+    inset -2px -2px #dfdfdf,
+    inset 2px 2px #0a0a0a;
+  padding: 2px;
+}
+
+.field-border-disabled {
+  background: silver;
+}
+
+.status-field-border {
+  background: silver;
+  box-shadow:
+    inset -1px -1px #dfdfdf,
+    inset 1px 1px grey;
+  padding: 1px;
+}
+
+/*# sourceMappingURL=98.css.map */
